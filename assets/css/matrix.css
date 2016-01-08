@@ -1,0 +1,48 @@
+body {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background: #111 url(../images/concrete_wall.png) center center repeat;
+}
+
+	#canvas {
+		display: block;
+		position: relative;
+		margin: 5%;
+	}
+	
+		#canvas .item {
+			display: inline-block;
+			position: relative;
+			width: 48px;
+			height: 48px;
+			margin: 10px;
+			padding: 0px;
+			background-color: transparent;
+			border: 2px dashed #666;
+			border-radius: 35px;
+			box-shadow: 0 0 30px rgba(0,0,0,0.2);
+			-webkit-transition: border-color 2s, background-color 2s, -webkit-transform 2s;
+			transition: border-color 2s, background-color 2s, transform 2s;
+		}
+		
+			#canvas .item.active {
+				background-color: #6a1;
+				border-color: #7b2;
+			}
+			
+			#canvas .item.inactive {
+				background-color: #d00;
+				border-color: #e11;
+			}
+
+			#canvas .item.animate {
+				animation: splash 2s normal forwards ease-in-out;
+			}
+			
+			@keyframes splash {
+				from { transform: scale(1,1); }
+				50% { transform: scale(1.5, 1.5); }
+				to { transform: scale(1,1); }
+			}
